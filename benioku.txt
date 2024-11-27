@@ -1,0 +1,9 @@
+/**
+* Dosya adı = benioku.txt
+* Bu dosya projenin nasil calistigi ve ekstra verilmesi gereken bilgilerin bulundugu yerdir.
+* 1. Ogretim C grubu
+* 1. Odev
+* 24/11/2024 persembe
+* Emirhan Buldurucu - emirhan.buldurucu@ogr.sakarya.edu.tr
+*/
+
