@@ -1,18 +1,19 @@
 /**
-* Dosya adı = Kromozom.cpp  
-* Bu dosya kromozom.hpp dosyasinda ki kromozom classindaki 
-* 1. Ogretim C grubu
-* 1. Odev
-* 03/11/2024 pazar
-* Emirhan Buldurucu - emirhan.buldurucu@ogr.sakarya.edu.tr
+* @file             Kromozom.cpp  
+* @description      Bu dosya kromozom.hpp dosyasindaki kromozom classindaki 
+*                   fonksiyonlarin govde kisminin yazildigi dosyadir.
+* @assignemnt       1. Ogretim C grubu
+* @course           1. Odev
+* @date             03/11/2024 pazar
+* @author           Emirhan Buldurucu - emirhan.buldurucu@ogr.sakarya.edu.tr
 */
 
 #include "../include/Kromozom.hpp"
 #include <iostream>
 
-Kromozom::Kromozom() : pNext(nullptr) , pPrev(nullptr), pHead(nullptr) , pTail(nullptr) {}
+Kromozom::Kromozom() : pNext(nullptr) , pPrev(nullptr), pHead(nullptr) , pTail(nullptr) {}  //Kromozom kurucu fonksiyonu
 
-Kromozom::~Kromozom(){
+Kromozom::~Kromozom(){  //Kromozom yikici fonksiyonu
     Gen* gNew = pHead;
     Gen* gTemp;
     while(gNew){
@@ -22,9 +23,9 @@ Kromozom::~Kromozom(){
     }
 }
 
-Kromozom* Kromozom::getNext(){
-    return pNext;
-}
+Kromozom* Kromozom::getNext(){  //Bu asagidaki fonksiyonlar private bolgeye ulasamadigimiz icin 
+    return pNext;               //Degerleri degistirmek ya da ulasmak icin kullanilir
+}                   
 
 Kromozom* Kromozom::getPrev(){
     return pPrev;
@@ -46,10 +47,10 @@ void Kromozom::setPrev(Kromozom* kPrev){
     pPrev = kPrev;
 }
 
-void Kromozom::genEkle(char cDeger){
+void Kromozom::genEkle(char cDeger){    //Bu fonksiyon Kromozoma gen eklemek icin kullanilir
     Gen* gNew = new Gen(cDeger);
 
-    if(pHead == nullptr){
+    if(pHead == nullptr){   //Eger head bossa yani eleman yoksa yeni eleman hem head hem de tail olur
         pHead = gNew;
         pTail = gNew;
     }else{
@@ -59,27 +60,27 @@ void Kromozom::genEkle(char cDeger){
     }
 }
 
-Gen* Kromozom::ortaBul() {
-    Gen* first = pHead;
+Gen* Kromozom::ortaBul() {  //Bu fonksiyon verilen kromozomun orta elemanini geri dondurur
+    Gen* first = pHead;     //ilk eleman birer ilerlerken ikinci eleman iki kere ilerler
     Gen* last = pHead;
 
-    while(last != nullptr && last->getNext() != nullptr){
-        first = first->getNext();
+    while(last != nullptr && last->getNext() != nullptr){   //Bu sekilde son eleman listenin sonuna ulastiginda 
+        first = first->getNext();                           //ilk eleman listenin ortasina ulasir
         last = last->getNext()->getNext();
     }
     return first;
 }
 
-void Kromozom::caprazla(Kromozom* kromozom, Kromozom* newKromozom1, Kromozom* newKromozom2) {
-    Gen* gMiddle1 = this->ortaBul();
-    Gen* gMiddle2 = kromozom->ortaBul();
+void Kromozom::caprazla(Kromozom* kromozom, Kromozom* newKromozom1, Kromozom* newKromozom2) {   //BU fonksiyon caprazlama islemini gerceklestiri
+    Gen* gMiddle1 = this->ortaBul();    //Iki kromozomunda orta noktasi bulunur
+    Gen* gMiddle2 = kromozom->ortaBul();    
 
-    if (gMiddle1 == nullptr || gMiddle2 == nullptr) {
+    if (gMiddle1 == nullptr || gMiddle2 == nullptr) {   //Orta noktalar yoksa uyari verilir
         std::perror("Kromozomlarin orta elemani olusturulamadi!!\n");
-        return;
+        return; 
     }
 
-    Gen* gTemp = this->pHead;
+    Gen* gTemp = this->pHead;   //1. elemanin orta noktasi gecici bir elemana verilir caprazlama islemi gerceklestirir
     while (gTemp != gMiddle1) {
         newKromozom1->genEkle(gTemp->getDeger());
         gTemp = gTemp->getNext();
@@ -105,7 +106,7 @@ void Kromozom::caprazla(Kromozom* kromozom, Kromozom* newKromozom1, Kromozom* ne
 }
 
 
-void Kromozom::genYazdir(){
+void Kromozom::genYazdir(){ //Bu fonksiyon kromozomun genlerini yazdirir
     Gen* gNew = getHead();
 
     while(gNew != nullptr){

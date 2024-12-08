@@ -1,9 +1,14 @@
 /**
-* Dosya adı = benioku.txt
-* Bu dosya projenin nasil calistigi ve ekstra verilmesi gereken bilgilerin bulundugu yerdir.
-* 1. Ogretim C grubu
-* 1. Odev
-* 24/11/2024 persembe
-* Emirhan Buldurucu - emirhan.buldurucu@ogr.sakarya.edu.tr
+* @file             benioku.txt
+* @description      Bu dosya projenin nasil calistigi ve ekstra verilmesi gereken bilgilerin bulundugu yerdir.
+* @course           1. Ogretim C grubu
+* @assignment       1. Odev
+* @date             24/11/2024 persembe
+* @author           Emirhan Buldurucu - emirhan.buldurucu@ogr.sakarya.edu.tr
 */
 
+    Dikkat edilmesi gereken kurallar:   
+    - Dosya yollari Linux'a gore ayarlanmistir bu yuzden dosya yollari degistirmelidir.
+    - Makefile icindeki dosya yollari Linux'a gore duzenlenmisti bu yuzden dosya yollari kontrol edilmelidir.
+    - system("cls") fonksiyonu windows ve linux a gore otomatik olarak main.cpp de ayarlanmaktadir 
+    istege bagli olarak kaldirilabilir.

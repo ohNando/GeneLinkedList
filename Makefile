@@ -1,3 +1,10 @@
+# @file				Makefile  
+# @description		Bu dosya kodun derlenip calistirildigi dosyadir.
+# @course			1. Ogretim C grubu
+# @assignment		1. Odev
+# @date				03/11/2024 pazar
+# @author			Emirhan Buldurucu - emirhan.buldurucu@ogr.sakarya.edu.tr
+
 all: bin/program lib/main.o lib/Kromozom.o lib/Gen.o
 	./bin/program
 
