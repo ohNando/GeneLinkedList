@@ -1,4 +1,4 @@
-# GeneLinkedList
+# linkedGenes
 
 This project implements DNA, chromosome, and gene structures using linked lists in C++. The program performs operations such as:
 > Crossover: Combines parts of two chromosomes to create new ones.
